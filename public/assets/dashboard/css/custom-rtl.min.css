@@ -1,0 +1,37 @@
+/*@font-face {*/
+/*    font-family: montserrat;*/
+/*    font-display: swap;*/
+/*    src: url(../fonts/montserrat-Arabic-Regular.woff);*/
+/*}*/
+
+/** {*/
+/*    font-family: "montserrat";*/
+/*}*/
+/*.apexcharts-series ,*/
+/*.apexcharts-datalabels,*/
+/*.apex-charts text,*/
+/*.apexcharts-legend-text{*/
+/*    font-family: "montserrat" !important;*/
+/*}*/
+
+@font-face {
+    font-family: Calibri;
+    font-display: swap;
+    src: url(../fonts/Calibri Regular.ttf);
+}
+* {
+    font-family: "Calibri";
+}
+img {
+    max-width: 100%;
+}
+
+.profileImgs img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.profileImgs img:hover {
+    cursor: zoom-in;
+}
