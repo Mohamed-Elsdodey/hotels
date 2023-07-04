@@ -22,6 +22,7 @@ class AdminController extends Controller
     public function index(Request $request)
     {
 
+
         if ($request->ajax()) {
             $admins = Admin::query()->latest();
             return Datatables::of($admins)

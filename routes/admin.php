@@ -37,7 +37,6 @@ Route::group(
 
         ### admins
 
-        Route::resource('admins', \App\Http\Controllers\Admin\AdminController::class);
         Route::get('activateAdmin', [App\Http\Controllers\Admin\AdminController::class, 'activate'])->name('admin.active.admin');
 
         Route::resource('admins', \App\Http\Controllers\Admin\AdminController::class);
@@ -45,8 +44,36 @@ Route::group(
 
         ### setting
         Route::resource('settings', \App\Http\Controllers\Admin\SettingController::class);
+
+
+        ### category_rents
+        Route::resource('category_rents', \App\Http\Controllers\Admin\CategoryRents\CategoryRent::class);
+
+
+        ### rent_places
+        Route::resource('rent_places', \App\Http\Controllers\Admin\RentPlaces\RentPlace::class);
+
+
+        ### rent_places
+        Route::resource('expense_categories', \App\Http\Controllers\Admin\ExpenseCategories\ExpenseCategory::class);
+
+
+        ### expenses
+        Route::resource('expenses', \App\Http\Controllers\Admin\Expenses\Expense::class);
+        Route::get('getSubExpenseCategoryByMain/{id}', [\App\Http\Controllers\Admin\Expenses\Expense::class,'getSubExpenseCategoryByMain'])->name('admin.getSubExpenseCategoryByMain');
+
+
+
+
+
+        ### hotels
         Route::resource('hotels', \App\Http\Controllers\Admin\Hotels\Hotels::class);//hotels
         Route::resource('roomsfeatures', \App\Http\Controllers\Admin\RoomFeatures\RoomFeature::class);//roomsfeatures
+
+
+        ### settings
+
+        Route::resource('settings', \App\Http\Controllers\Admin\SettingController::class);//hotels
 
 
     });
