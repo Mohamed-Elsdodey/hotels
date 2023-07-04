@@ -40,11 +40,13 @@ Route::group(
         Route::resource('admins', \App\Http\Controllers\Admin\AdminController::class);
         Route::get('activateAdmin', [App\Http\Controllers\Admin\AdminController::class, 'activate'])->name('admin.active.admin');
 
+        Route::resource('admins', \App\Http\Controllers\Admin\AdminController::class);
 
 
         ### setting
         Route::resource('settings', \App\Http\Controllers\Admin\SettingController::class);
-
+        Route::resource('hotels', \App\Http\Controllers\Admin\Hotels\Hotels::class);//hotels
+        Route::resource('roomsfeatures', \App\Http\Controllers\Admin\RoomFeatures\RoomFeature::class);//roomsfeatures
 
 
     });
