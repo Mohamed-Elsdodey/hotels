@@ -47,7 +47,8 @@ Route::group(
         Route::resource('settings', \App\Http\Controllers\Admin\SettingController::class);
         Route::resource('hotels', \App\Http\Controllers\Admin\Hotels\Hotels::class);//hotels
         Route::resource('roomsfeatures', \App\Http\Controllers\Admin\RoomFeatures\RoomFeature::class);//roomsfeatures
-
+        ### categories
+        Route::resource('categories', \App\Http\Controllers\Admin\CategoryController::class);//categoriesphp
 
     });
 

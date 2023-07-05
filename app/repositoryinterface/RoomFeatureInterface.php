@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 interface RoomFeatureInterface
 {
-   
+
 
     public function all();
 
