@@ -2,6 +2,14 @@
 
 namespace App\Providers;
 
+use App\repository\DbCategoryRentRepository;
+use App\repository\DbExpenseCategoryRepository;
+use App\repository\DbExpenseRepository;
+use App\repository\DbRentPlaceRepository;
+use App\repositoryinterface\CategoryRentInterface;
+use App\repositoryinterface\ExpenseCategoryInterface;
+use App\repositoryinterface\ExpenseInterface;
+use App\repositoryinterface\RentPlaceInterface;
 use Illuminate\Support\ServiceProvider;
 
 use App\repository\DbHotelRepository;
@@ -21,6 +29,11 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this->app->bind(HotelInterface::class,DbHotelRepository::class);
         $this->app->bind(RoomFeatureInterface::class,DbRoomFeatureRepository::class);
+        $this->app->bind(CategoryRentInterface::class,DbCategoryRentRepository::class);
+        $this->app->bind(RentPlaceInterface::class,DbRentPlaceRepository::class);
+        $this->app->bind(ExpenseCategoryInterface::class,DbExpenseCategoryRepository::class);
+        $this->app->bind(ExpenseInterface::class,DbExpenseRepository::class);
+
     }
 
     /**

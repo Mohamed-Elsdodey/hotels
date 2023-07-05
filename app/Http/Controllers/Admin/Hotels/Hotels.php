@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Admin\Hotels;
 
 use App\Http\Controllers\Controller;
-use App\Http\Traits\LogActivityTrait;
 use App\Http\Traits\Upload_Files;
-use App\Models\Category;
 use App\Models\Hotel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
