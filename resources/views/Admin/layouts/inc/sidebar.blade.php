@@ -79,6 +79,19 @@
                 </li> <!-- end Dashboard Menu -->
 
 
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('governorates.index')}}">
+                        <i class="fa fa-map"></i> <span data-key="t-dashboards"> Governorates</span>
+                    </a>
+                </li> <!-- end Dashboard Menu -->
+
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('clients.index')}}">
+                        <i class="fa fa-user"></i> <span data-key="t-dashboards"> Clients</span>
+                    </a>
+                </li> <!-- end Dashboard Menu -->
+
 
 
 

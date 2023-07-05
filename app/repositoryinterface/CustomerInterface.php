@@ -5,7 +5,7 @@ namespace App\repositoryinterface;
 
 use Illuminate\Http\Request;
 
-interface RentPlaceInterface
+interface CustomerInterface
 {
 
 
@@ -17,38 +17,7 @@ interface RentPlaceInterface
     public function destroy($id);
     public function get_by_id($id);
 
+
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
