@@ -42,7 +42,7 @@
             </label>
 
             <select id="governorate_id" name="governorate_id" class="form-control">
-                <option selected disabled>اختر المحافظة</option>
+                <option selected disabled> choose governorate </option>
                 @foreach($governorates as $governorate)
                     <option @if($row->governorate_id==$governorate->id) selected @endif value="{{$governorate->id}}">@if(app()->getLocale()=='ar')   {{$governorate->title_ar}}    @else  {{$governorate->title_en}}   @endif </option>
                 @endforeach

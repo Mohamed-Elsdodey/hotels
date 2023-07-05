@@ -2,12 +2,14 @@
 
 namespace App\Providers;
 
+use App\repository\DbBookingRepository;
 use App\repository\DbCategoryRentRepository;
 use App\repository\DbCustomerRepository;
 use App\repository\DbExpenseCategoryRepository;
 use App\repository\DbExpenseRepository;
 use App\repository\DbGovernorateRepository;
 use App\repository\DbRentPlaceRepository;
+use App\repositoryinterface\BookingInterface;
 use App\repositoryinterface\CategoryRentInterface;
 use App\repositoryinterface\CustomerInterface;
 use App\repositoryinterface\ExpenseCategoryInterface;
@@ -40,6 +42,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(ExpenseInterface::class,DbExpenseRepository::class);
         $this->app->bind(GovernorateInterface::class,DbGovernorateRepository::class);
         $this->app->bind(CustomerInterface::class,DbCustomerRepository::class);
+        $this->app->bind(BookingInterface::class,DbBookingRepository::class);
 
     }
 

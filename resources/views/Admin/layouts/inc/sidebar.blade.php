@@ -94,6 +94,14 @@
 
 
 
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('booking.index')}}">
+                        <i class="fa fa-ticket"></i> <span data-key="t-dashboards"> Booking</span>
+                    </a>
+                </li> <!-- end Dashboard Menu -->
+
+
+
 
 
                 <li class="nav-item">

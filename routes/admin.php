@@ -71,6 +71,11 @@ Route::group(
         Route::resource('clients', \App\Http\Controllers\Admin\Clients\Client::class);
 
 
+        ### booking
+        Route::resource('booking', \App\Http\Controllers\Admin\Booking\Booking::class);
+        Route::get('getRoomsInBooking',[\App\Http\Controllers\Admin\Booking\Booking::class,'getRoomsInBooking'])->name('admin.getRoomsInBooking');
+
+
 
         ### hotels
         Route::resource('hotels', \App\Http\Controllers\Admin\Hotels\Hotels::class);//hotels
