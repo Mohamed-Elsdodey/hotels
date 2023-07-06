@@ -87,6 +87,14 @@
 
 
                 <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('governorates.index')}}">
+                        <i class="fa fa-map"></i> <span data-key="t-dashboards"> Governorates</span>
+                    </a>
+                </li> <!-- end Dashboard Menu -->
+
+
+
+                <li class="nav-item">
                     <a class="nav-link menu-link" href="{{route('rent_places.index')}}">
                         <i class="fa fa-map-marker"></i> <span data-key="t-dashboards"> Rent Places</span>
                     </a>
@@ -97,18 +105,8 @@
 
 
 
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{route('expenses.index')}}">
-                        <i class="fa fa-usd"></i> <span data-key="t-dashboards"> Expenses</span>
-                    </a>
-                </li> <!-- end Dashboard Menu -->
 
 
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{route('governorates.index')}}">
-                        <i class="fa fa-map"></i> <span data-key="t-dashboards"> Governorates</span>
-                    </a>
-                </li> <!-- end Dashboard Menu -->
 
 
                 <li class="nav-item">
@@ -119,11 +117,6 @@
 
 
 
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{route('booking.index')}}">
-                        <i class="fa fa-ticket"></i> <span data-key="t-dashboards"> Booking</span>
-                    </a>
-                </li> <!-- end Dashboard Menu -->
 
 
 
@@ -142,21 +135,21 @@
                 </li> <!-- end Dashboard Menu -->
 
 
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{route('rooms.index')}}">
-                        <i class="fa-solid fa-hotel"></i> <span data-key="t-dashboards"> Customers</span>
-                    </a>
-                </li> <!-- end Dashboard Menu -->
-
 
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#">
-                        <i class="fa-solid fa-hotel"></i> <span data-key="t-dashboards"> Booking</span>
+                    <a class="nav-link menu-link" href="{{route('booking.index')}}">
+                        <i class="fa fa-ticket"></i> <span data-key="t-dashboards"> Booking</span>
                     </a>
                 </li> <!-- end Dashboard Menu -->
 
 
 
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('expenses.index')}}">
+                        <i class="fa fa-usd"></i> <span data-key="t-dashboards"> Expenses</span>
+                    </a>
+                </li> <!-- end Dashboard Menu -->
 
 
 
