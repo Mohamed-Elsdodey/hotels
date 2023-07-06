@@ -63,6 +63,17 @@ Route::group(
         Route::get('getSubExpenseCategoryByMain/{id}', [\App\Http\Controllers\Admin\Expenses\Expense::class,'getSubExpenseCategoryByMain'])->name('admin.getSubExpenseCategoryByMain');
 
 
+        ###  governorates
+        Route::resource('governorates', \App\Http\Controllers\Admin\Governorates\Governorate::class);
+
+
+        ###  clients
+        Route::resource('clients', \App\Http\Controllers\Admin\Clients\Client::class);
+
+
+        ### booking
+        Route::resource('booking', \App\Http\Controllers\Admin\Booking\Booking::class);
+        Route::get('getRoomsInBooking',[\App\Http\Controllers\Admin\Booking\Booking::class,'getRoomsInBooking'])->name('admin.getRoomsInBooking');
 
 
 
