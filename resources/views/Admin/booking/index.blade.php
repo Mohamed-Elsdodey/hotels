@@ -110,7 +110,19 @@
             </div>
 
         </div>
-    </div>
+
+
+        <div class="card-body" id="room_table">
+
+
+
+        </div>
+
+
+
+
+
+        </div>
 
 @endsection
 @section('js')
@@ -118,10 +130,17 @@
   <script>
         $(document).on('click','#search_btn',function (){
            var  hotel_id=$('#hotel_id').val();
-           var  room_feature_id=$('#room_feature_id').val();
+           var  room_category_id=$('#room_category_id').val();
            var  fromDate=$('#fromDate').val();
             var toDate=$('#toDate').val();
 
+            var route="{{route('admin.getRoomsInBooking')}}?hotel_id="+hotel_id+"&&room_category_id="+room_category_id+"&&fromDate="+fromDate+"&&toDate="+toDate;
+
+
+
+            setTimeout(function (){
+                $('#room_table').load(route)
+            },1000)
 
         })
   </script>
