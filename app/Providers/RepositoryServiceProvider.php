@@ -23,8 +23,10 @@ use App\repository\DbHotelRepository;
 use App\repository\DbRoomFeatureRepository;
 use App\repositoryinterface\HotelInterface;
 use App\repositoryinterface\RoomFeatureInterface;
-
-
+use App\repository\DbRoomCategory;
+use App\repositoryinterface\RoomCategoryInterface;
+use App\repository\DbRoomRepository;
+use App\repositoryinterface\RoomInterface;
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
@@ -43,6 +45,16 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(GovernorateInterface::class,DbGovernorateRepository::class);
         $this->app->bind(CustomerInterface::class,DbCustomerRepository::class);
         $this->app->bind(BookingInterface::class,DbBookingRepository::class);
+
+
+
+
+
+
+
+        //=====================================zidan=========================================
+        $this->app->bind(RoomCategoryInterface::class,DbRoomCategory::class);
+        $this->app->bind(RoomInterface::class,DbRoomRepository::class);
 
     }
 

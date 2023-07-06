@@ -87,6 +87,9 @@ Route::group(
 
         Route::resource('settings', \App\Http\Controllers\Admin\SettingController::class);//hotels
 
+        Route::resource('roomcategory', \App\Http\Controllers\Admin\RoomCategories\RoomCategory::class);//roomcategory
+
+        Route::resource('rooms', \App\Http\Controllers\Admin\Rooms\Rooms::class);//roomcategory
 
     });
 

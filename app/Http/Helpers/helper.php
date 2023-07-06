@@ -96,4 +96,12 @@ if (!function_exists('session_lang')) {
         }
         return $lang;
     }
+
+
+    if (!function_exists('TypesCategory')) {
+        function TypesCategory()
+        {
+            return array(1=>'type room');
+        }
+    }
 }
