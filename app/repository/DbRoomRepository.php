@@ -1,19 +1,19 @@
 <?php
 
 namespace App\repository;
-use App\Models\RoomsCategory;
+use App\Models\Room;
 
-use App\repositoryinterface\RoomCategoryInterface;
+use App\repositoryinterface\RoomInterface;
 use Yajra\DataTables\DataTables;
 use Illuminate\Http\Request;
 
-class DbRoomCategory implements RoomCategoryInterface{
+class DbRoomRepository implements RoomInterface{
 
 
     public function all()
     {
 
-        $admins = RoomsCategory::get();
+        $admins = Room::with('categoryroom')->get();
         return DataTables::of($admins)
             ->addColumn('action', function ($row) {
 
@@ -47,8 +47,8 @@ class DbRoomCategory implements RoomCategoryInterface{
             })
 
 
-            ->editColumn('type', function ($row) {
-                return  TypesCategory()[$row->type];
+            ->editColumn('category', function ($row) {
+                return  1;
             })
 
 
@@ -74,12 +74,22 @@ class DbRoomCategory implements RoomCategoryInterface{
     public function store($request)
     {
         $data = $request->validate([
-            'type' => 'required',
+
             'title_ar' => 'required',
             'title_en' => 'required' ,
-        ]);
+            'room_number' => 'required' ,
+            'hotel_id' => 'required',
+            'floor' => 'required',
+            'room_category' => 'required',
+            'price' => 'required',
 
-        RoomsCategory::create($data);
+
+        ]);
+       $data['features']=json_encode( $request->features);
+        $data['publisher']=auth()->user()->id;
+
+        //$data['description']=$request->description ;
+        Room::create($data);
         return response()->json(
             [
                 'code' => 200,
@@ -96,12 +106,21 @@ class DbRoomCategory implements RoomCategoryInterface{
     {
 
         $data = $request->validate([
+
             'title_ar' => 'required',
             'title_en' => 'required' ,
-            'type' => 'required',
-        ]);
+            'room_number' => 'required' ,
+            'hotel_id' => 'required',
+            'floor' => 'required',
+            'room_category' => 'required',
+            'price' => 'required',
 
-        RoomsCategory::where('id',$id)->update($data);
+
+        ]);
+        $data['features']=json_encode( $request->features);
+        $data['publisher']=auth()->user()->id;
+
+        Room::where('id',$id)->update($data);
         return response()->json(
             [
                 'code' => 200,
@@ -111,7 +130,7 @@ class DbRoomCategory implements RoomCategoryInterface{
     }
     public function destroy($id)
     {
-        RoomsCategory::destroy($id);
+        Room::destroy($id);
         return response()->json(
             [
                 'code' => 200,
@@ -121,7 +140,7 @@ class DbRoomCategory implements RoomCategoryInterface{
 
     public function get_by_id($id)
     {
-        return RoomsCategory::find($id);
+        return Room::find($id);
     }
 
 }

@@ -116,6 +116,7 @@
             },
             success: function (data) {
 
+
                 window.setTimeout(function () {
                     $('#submit').html('Ok').attr('disabled', false);
 

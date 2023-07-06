@@ -48,9 +48,39 @@
                     </a>
                 </li> <!-- end Dashboard Menu -->
 
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('settings.index')}}">
+                        <i class="fa fa-cog" aria-hidden="true"></i> <span data-key="t-dashboards">Setting </span>
+                    </a>
+                </li> <!-- end Dashboard Menu -->
+
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{route('category_rents.index')}}">
                         <i class="fa fa-list-alt"></i> <span data-key="t-dashboards">Category Rents</span>
+                    </a>
+                </li> <!-- end Dashboard Menu -->
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('expense_categories.index')}}">
+                        <i class="fa fa-usd"></i> <span data-key="t-dashboards"> Expense Categories</span>
+                    </a>
+                </li> <!-- end Dashboard Menu -->
+
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('roomsfeatures.index')}}">
+                        <i class="fa-solid fa-hotel"></i> <span data-key="t-dashboards">Rooms Features</span>
+                    </a>
+                </li> <!-- end Dashboard Menu -->
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('roomcategory.index')}}">
+                        <i class="fa-solid fa-hotel"></i> <span data-key="t-dashboards">Rooms Category</span>
                     </a>
                 </li> <!-- end Dashboard Menu -->
 
@@ -64,11 +94,6 @@
 
 
 
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{route('expense_categories.index')}}">
-                        <i class="fa fa-usd"></i> <span data-key="t-dashboards"> Expense Categories</span>
-                    </a>
-                </li> <!-- end Dashboard Menu -->
 
 
 
@@ -89,19 +114,28 @@
                     </a>
                 </li> <!-- end Dashboard Menu -->
 
-
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{route('roomsfeatures.index')}}">
-                        <i class="fa-solid fa-hotel"></i> <span data-key="t-dashboards">Rooms Features</span>
+                    <a class="nav-link menu-link" href="{{route('rooms.index')}}">
+                        <i class="fa-solid fa-hotel"></i> <span data-key="t-dashboards"> Rooms</span>
                     </a>
                 </li> <!-- end Dashboard Menu -->
 
 
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{route('settings.index')}}">
-                        <i class="fa fa-cog" aria-hidden="true"></i> <span data-key="t-dashboards">Setting </span>
+                    <a class="nav-link menu-link" href="{{route('rooms.index')}}">
+                        <i class="fa-solid fa-hotel"></i> <span data-key="t-dashboards"> Customers</span>
                     </a>
                 </li> <!-- end Dashboard Menu -->
+
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#">
+                        <i class="fa-solid fa-hotel"></i> <span data-key="t-dashboards"> Booking</span>
+                    </a>
+                </li> <!-- end Dashboard Menu -->
+
+
+
 
 
 
