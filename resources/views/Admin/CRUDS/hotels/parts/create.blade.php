@@ -6,7 +6,7 @@
 
 
 
-        <div class="d-flex flex-column mb-7 fv-row col-sm-6">
+        <div class="d-flex flex-column mb-7 fv-row col-sm-4">
             <!--begin::Label-->
             <label for="title" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
                 <span class="required mr-1">Hotel</span>
@@ -15,8 +15,17 @@
             <input id="name"  type="text" class="form-control form-control-solid" placeholder="" name="name" value=""/>
         </div>
 
+        <div class="d-flex flex-column mb-7 fv-row col-sm-4">
+            <!--begin::Label-->
+            <label for="max_floor_room" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                <span class="required mr-1">max_floor_room</span>
+            </label>
+            <!--end::Label-->
+            <input id="max_floor_room"  min="0" type="number" class="form-control form-control-solid" placeholder="" name="max_floor_room" value=""/>
+        </div>
 
-        <div class="d-flex flex-column mb-7 fv-row col-sm-6">
+
+        <div class="d-flex flex-column mb-7 fv-row col-sm-4">
             <!--begin::Label-->
             <label for="title" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
                 <span class="required mr-1"> number of floor</span>

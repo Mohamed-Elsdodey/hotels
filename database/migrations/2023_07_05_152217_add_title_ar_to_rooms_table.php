@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::table('rooms', function (Blueprint $table) {
              $table->string('title_ar')->nullable()->after('id');
             $table->string('title_en')->nullable()->after('title_ar');
-            $table->string('room_number')->nullable()->after('title_en');
         });
     }
 

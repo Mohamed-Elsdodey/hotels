@@ -76,6 +76,8 @@ class DbHotelRepository implements HotelInterface{
         $data = $request->validate([
             'name' => 'required',
             'num_floor' => 'required' ,
+            'max_floor_room' => 'required' ,
+
         ]);
         $data['adress']=$request->adress ;
         $data['description']=$request->description ;
@@ -101,6 +103,8 @@ class DbHotelRepository implements HotelInterface{
         $data = $request->validate([
             'name' => 'required',
             'num_floor' => 'required' ,
+            'max_floor_room' => 'required' ,
+
         ]);
         $data['adress']=$request->adress ;
         $data['description']=$request->description ;

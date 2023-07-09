@@ -74,7 +74,8 @@ Route::group(
         ### booking
         Route::resource('booking', \App\Http\Controllers\Admin\Booking\Booking::class);
         Route::get('getRoomsInBooking',[\App\Http\Controllers\Admin\Booking\Booking::class,'getRoomsInBooking'])->name('admin.getRoomsInBooking');
-
+        Route::get('getRoomPrice/{id}',[\App\Http\Controllers\Admin\Booking\Booking::class,'getRoomPrice'])->name('admin.getRoomPrice');
+        Route::get('store_booking',[\App\Http\Controllers\Admin\Booking\Booking::class,'store_booking'])->name('admin.store_booking');
 
 
         ### hotels
