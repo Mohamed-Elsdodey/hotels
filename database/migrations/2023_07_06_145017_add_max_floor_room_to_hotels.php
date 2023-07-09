@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('rooms', function (Blueprint $table) {
-             $table->string('title_ar')->nullable()->after('id');
-            $table->string('title_en')->nullable()->after('title_ar');
+        Schema::table('hotels', function (Blueprint $table) {
+            //
+            $table->double('max_floor_room')->default(0)->after('id');
+
         });
     }
 
@@ -26,7 +27,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('rooms', function (Blueprint $table) {
+        Schema::table('hotels', function (Blueprint $table) {
             //
         });
     }
