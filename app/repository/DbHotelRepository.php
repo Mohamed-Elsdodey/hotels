@@ -8,11 +8,16 @@ use Yajra\DataTables\DataTables;
 use Illuminate\Http\Request;
 class DbHotelRepository implements HotelInterface{
 
+    function __construct($hotel)
+    {
 
+        $this->model = $hotel;
+    }
     public function all()
     {
 
-            $admins = Hotel::query()->latest();
+
+            $admins = $this->model->query()->latest();
             return DataTables::of($admins)
                 ->addColumn('action', function ($row) {
 
@@ -82,7 +87,7 @@ class DbHotelRepository implements HotelInterface{
         $data['lat']=$request->lat ;
         $data['long']=$request->long ;
         $data['publisher']=auth()->user()->id;
-       Hotel::create($data);
+        $this->model->create($data);
         return response()->json(
             [
                 'code' => 200,
@@ -107,7 +112,7 @@ class DbHotelRepository implements HotelInterface{
         $data['lat']=$request->lat ;
         $data['long']=$request->long ;
         $data['publisher']=auth()->user()->id;
-        Hotel::where('id',$id)->update($data);
+        $this->model->where('id',$id)->update($data);
         return response()->json(
             [
                 'code' => 200,
@@ -117,7 +122,7 @@ class DbHotelRepository implements HotelInterface{
     }
     public function destroy($id)
     {
-          Hotel::destroy($id);
+        $this->model->destroy($id);
         return response()->json(
             [
                 'code' => 200,
@@ -127,7 +132,7 @@ class DbHotelRepository implements HotelInterface{
 
     public function get_by_id($id)
     {
-        return Hotel::find($id);
+        return $this->model->find($id);
     }
 
 }

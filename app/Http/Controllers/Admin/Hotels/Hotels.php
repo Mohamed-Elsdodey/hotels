@@ -19,14 +19,17 @@ class Hotels extends Controller
 
     private $hotelRepository;
 
-    function __construct(HotelInterface $hotelRepository)
+    function __construct()
     {
-        $this->hotelRepository = $hotelRepository;
+         $hotel = new Hotel();
+         $hotelRepository =new DbHotelRepository($hotel);
+         $this->hotelRepository = $hotelRepository;
     }
 
 
     public function index(Request $request)
     {
+
 
         if ($request->ajax()) {
            return   $this->hotelRepository->all();

@@ -91,6 +91,12 @@ Route::group(
 
         Route::resource('rooms', \App\Http\Controllers\Admin\Rooms\Rooms::class);//roomcategory
 
+
+        Route::resource('invocing', \App\Http\Controllers\Admin\invocing\Invocing::class);//invocing
+
+        Route::get('invocing',[\App\Http\Controllers\Admin\invocing\Invocing::class,'invoice'])->name('invocing');
+        Route::get('openBat',[\App\Http\Controllers\Admin\invocing\Invocing::class,'openBat'])->name('openBat');
+
     });
 
 });
