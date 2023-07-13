@@ -4,13 +4,49 @@
     @csrf
     <div class="row g-4">
 
+
+
+        <div class="d-flex flex-column mb-7 fv-row col-sm-6">
+            <!--begin::Label-->
+            <label for="title" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                <span class="required mr-1">Hotel</span>
+            </label>
+            <!--end::Label-->
+            <select id="hotel_id" name="hotel_id" onchange="get_hotel_room();"  class="form-control" fdprocessedid="4rrte">
+
+                <option selected="" disabled=""> choose type</option>
+                @foreach($hotels as $key)
+                    <option value="{{ $key->id }}"> {{ $key->name }} </option>
+
+                @endforeach
+
+            </select>
+        </div>
+
+
+        <div class="d-flex flex-column mb-7 fv-row col-sm-6">
+            <!--begin::Label-->
+            <label for="title" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
+                <span class="required mr-1"> Floor</span>
+            </label>
+            <select id="floor" name="floor"   class="form-control">
+
+           <option value=""> choose Hotel first</option>
+
+            </select>
+        </div>
+
         <div class="d-flex flex-column mb-7 fv-row col-sm-6">
             <!--begin::Label-->
             <label for="title" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
                 <span class="required mr-1"> Room number </span>
             </label>
             <!--end::Label-->
-            <input id="room_number"  type="text" class="form-control form-control-solid" placeholder="" name="room_number" value=""/>
+            <select id="room_number" name="room_number"   class="form-control">
+
+                <option value=""> choose Hotel first</option>
+
+            </select>
         </div>
 
         <div class="d-flex flex-column mb-7 fv-row col-sm-6">
@@ -44,22 +80,7 @@
 
 
 
-        <div class="d-flex flex-column mb-7 fv-row col-sm-6">
-            <!--begin::Label-->
-            <label for="title" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-                <span class="required mr-1">Hotel</span>
-            </label>
-            <!--end::Label-->
-            <select id="hotel_id" name="hotel_id" class="form-control" fdprocessedid="4rrte">
 
-                <option selected="" disabled=""> choose type</option>
-                @foreach($hotels as $key)
-             <option value="{{ $key->id }}"> {{ $key->name }} </option>
-
-                @endforeach
-
-            </select>
-        </div>
 
 
         <div class="d-flex flex-column mb-7 fv-row col-sm-6">
@@ -79,14 +100,8 @@
             </select>
         </div>
 
-        <div class="d-flex flex-column mb-7 fv-row col-sm-6">
-            <!--begin::Label-->
-            <label for="title" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">
-                <span class="required mr-1"> Floor</span>
-            </label>
-            <input id="floor"  type="text" class="form-control form-control-solid" placeholder="" name="floor" value=""/>
-        </div>
-z
+
+
         <div class="d-flex flex-column mb-7 fv-row col-sm-6">
             <!--begin::Label-->
             <label for="title" class="d-flex align-items-center fs-6 fw-bold form-label mb-2">

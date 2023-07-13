@@ -85,6 +85,22 @@
 
     @include('Admin.layouts.inc.ajax',['url'=>'rooms'])
 
+      <script>
 
+          $(document).on('change', '#hotel_id', function () {
+              var hotel_id = $('#hotel_id').val();
+                  var route_floor = "{{route('admin.gethotelsfloor')}}?hotel_id=" + hotel_id ;
+                 var route_room = "{{route('admin.gethotelsroom')}}?hotel_id=" + hotel_id ;
+                $('#floor').html('');
+                $('#room_number').html('');
+
+              $('#floor').load(route_floor);
+              $('#room_number').load(route_room);
+
+          })
+
+
+
+      </script>
 
 @endsection

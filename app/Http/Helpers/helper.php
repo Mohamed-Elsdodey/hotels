@@ -101,7 +101,24 @@ if (!function_exists('session_lang')) {
     if (!function_exists('TypesCategory')) {
         function TypesCategory()
         {
-            return array(1=>'type room');
+            return array(1 => 'type room');
         }
     }
+
+
+    if (!function_exists('get_difference_between_two_dates')) {
+        function get_difference_between_two_dates($date1, $date2)
+
+    {
+        $now = strtotime($date2);// or your date as well
+        $your_date = strtotime($date1);
+        $datediff = $now - $your_date;
+
+        return round($datediff / (60 * 60 * 24));
+    }
+}
+
+
+
+
 }

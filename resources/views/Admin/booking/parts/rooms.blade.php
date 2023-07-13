@@ -19,7 +19,7 @@
                 @endphp
                 @foreach($rooms as $room)
                     @if($room->floor==$j && $room->room_number==$k)
-                    <th class="text-center">{{$room->floor}}{{$room->room_number}} <input data-price="{{$room->price}}" class="room_price" data-id="{{$room->id}}" type="checkbox"></th>
+                    <th class="text-center">{{$room->floor}}{{$room->room_number}} <input data-price="{{$room->price}}" id="room_{{$room->id}}" class="room_price" onchange="get_total({{$room->id}});" data-id="{{$room->id}}" type="checkbox"></th>
                         @php
                             {{$flag=1;}}
                         @endphp
@@ -33,5 +33,5 @@
     @endfor
 </table>
 
-<button type="submit" form="data_booking_form" class="btn btn-success"> save</button>
+<button type="submit" id="submit" form="data_booking_form" class="btn btn-success"> save</button>
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Traits\LogActivityTrait;
 use App\Http\Traits\Upload_Files;
 use App\Models\Room;
+use App\Models\Hotel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
@@ -58,9 +59,14 @@ class Rooms extends Controller
 
         $Roomstypes=DB::table('rooms_categories')->where('type',1)->get();
         $hotels=DB::table('hotels')->get();
+
         $features=DB::table('rooms_features')->get();
         $Room=  $this->Room->get_by_id($id);
-        return view('Admin.CRUDS.rooms.parts.edit', compact('Roomstypes','hotels','features','Room'));
+
+        $num_floor=Hotel::find($Room->hotel_id)->first()->num_floor;
+        $num_rooms=Hotel::find($Room->hotel_id)->first()->max_floor_room;
+
+        return view('Admin.CRUDS.rooms.parts.edit', compact('Roomstypes','hotels','features','Room','num_floor','num_rooms'));
 
     }
 
@@ -76,6 +82,21 @@ class Rooms extends Controller
 
 
     }//end fun
+
+
+    public function gethotelsfloor(Request $request)
+    {
+        $max_count=Hotel::find($request->hotel_id)->first()->num_floor;
+        return view('Admin.CRUDS.rooms.parts.load_floor',compact('max_count'));
+    }
+
+    public function gethotelsroom(Request $request)
+    {
+         $max_count=Hotel::find($request->hotel_id)->first()->max_floor_room;
+        return view('Admin.CRUDS.rooms.parts.load_floor',compact('max_count'));
+
+
+    }
 
 
 

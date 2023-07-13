@@ -72,10 +72,17 @@ Route::group(
 
 
         ### booking
-        Route::resource('booking', \App\Http\Controllers\Admin\Booking\Booking::class);
-        Route::get('getRoomsInBooking',[\App\Http\Controllers\Admin\Booking\Booking::class,'getRoomsInBooking'])->name('admin.getRoomsInBooking');
-        Route::get('getRoomPrice/{id}',[\App\Http\Controllers\Admin\Booking\Booking::class,'getRoomPrice'])->name('admin.getRoomPrice');
-        Route::get('store_booking',[\App\Http\Controllers\Admin\Booking\Booking::class,'store_booking'])->name('admin.store_booking');
+        Route::resource('booking', \App\Http\Controllers\Admin\Booking\Bookings::class);
+        Route::get('getRoomsInBooking',[\App\Http\Controllers\Admin\Booking\Bookings::class,'getRoomsInBooking'])->name('admin.getRoomsInBooking');
+        Route::get('getRoomPrice/{id}',[\App\Http\Controllers\Admin\Booking\Bookings::class,'getRoomPrice'])->name('admin.getRoomPrice');
+        Route::Post('store_booking',[\App\Http\Controllers\Admin\Booking\Bookings::class,'store_booking'])->name('admin.store_booking');
+        Route::get('test_invoice',[\App\Http\Controllers\Admin\Booking\Bookings::class,'test_invoice'])->name('admin.test_invoice');
+
+
+        //================================================================================
+        Route::get('gethotelsfloor',[\App\Http\Controllers\Admin\Rooms\Rooms::class,'gethotelsfloor'])->name('admin.gethotelsfloor');
+        Route::get('gethotelsroom',[\App\Http\Controllers\Admin\Rooms\Rooms::class,'gethotelsroom'])->name('admin.gethotelsroom');
+
 
 
         ### hotels
@@ -97,6 +104,8 @@ Route::group(
 
         Route::get('invocing',[\App\Http\Controllers\Admin\invocing\Invocing::class,'invoice'])->name('invocing');
         Route::get('openBat',[\App\Http\Controllers\Admin\invocing\Invocing::class,'openBat'])->name('openBat');
+        Route::get('no_signature',[\App\Http\Controllers\Admin\invocing\Invocing::class,'no_signature'])->name('no_signature');
+        Route::get('invoice3',[\App\Http\Controllers\Admin\invocing\Invocing::class,'invoice3'])->name('invoice3');
 
     });
 

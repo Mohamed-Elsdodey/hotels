@@ -11,6 +11,8 @@ interface BookingInterface
 
     public function all();
     public function getRoomsInBooking(Request $request);
+    public function get_by_id($id);
+
 
 }
 
